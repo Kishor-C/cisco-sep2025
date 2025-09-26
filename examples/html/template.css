@@ -1,0 +1,24 @@
+ .danger { 
+    color : red;
+ }
+ #success { 
+    color : green;
+ }
+ 
+ input[type="text"], input[type="password"] {
+    width: 25%;
+    padding: 10px 10px;
+    font-size: 18px;
+    margin: 5px;
+}
+label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+button { 
+    background-color: blueviolet; color: white; padding: 10px 25px; 
+    border: none; border-radius: 25px; font-size: 18px;
+    margin: 5px;
+}

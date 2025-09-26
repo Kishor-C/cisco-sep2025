@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h1>Form Control</h1>
+        <div class="container">
+            <form class="w-50">
+                <input type="text" class="form-control" placeholder="Enter your name" autocomplete="off">
+                <br />
+                <input type="text" class="form-control form-control-lg" placeholder="Enter your name">
+                <br />
+            </form>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-danger">Danger</button>
+    </div>
+    <div class="container">
+        <h2>This is inside the container class</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th><th>Name</th><th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>102</td><td>Alex</td><td>20000</td>
+                </tr>
+                <tr>
+                    <td>103</td><td>Brad</td><td>40000</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="container-fluid">
+        <h2>This is inside the container-fluid class</h2>
+    </div>
+
+    <div>
+        <h1 class="alert alert-danger">Some error message</h1>
+        <p class="alert alert-primary">Some description</p>
+        <p class="text-primary">Some text message</p>
+    </div>
+    <div id = "success">
+        <h1>Some success message</h1>
+    </div>
+    <div class = "danger">
+        <h1>Some more error message</h1>
+    </div>
+    <div>
+        <label>Enter username</label><input type = "text" placeholder="Enter some text"> <br />
+        <button>Button1</button>
+        <button>Button2</button>
+        <button 
+         style="background-color:blue; color:white; padding:10px 25px; border:none; border-radius: 25px;">
+         Button3
+        </button>
+        <h2 style="color:blue; text-align: center; border: 3px solid black; padding: 15px">Inline Styles</h2>
+        <h1>HTML Forms</h1>
+        <div>
+            <form action="#" method="post">
+                <label>Enter name 
+                    <input type="text" name = "username" placeholder="Enter name" autocomplete="off" /></label>
+                <br />
+                <label>Enter password 
+                    <input type = "password" name = "password" placeholder="Enter password" />
+                </label>
+                <br />
+                <label>Select Gender: </label>
+                <label>Male <input type = "radio" name = "gender" value="M" /></label>
+                <label>Female <input type = "radio" name = "gender" value="F" /></label>
+                <br />
+                <label>Select Skills:</label>
+                <label>Java <input type = "checkbox" name = "skills" value = "Java" /></label>
+                <label>Spring <input type = "checkbox" name = "skills" value = "Spring" /></label>
+                <label>Python <input type = "checkbox" name = "skills" value = "Python" /></label>
+                <br />
+                <label>Qualification</label>
+                <select>
+                    <optgroup label="Bachelors">
+                        <option value="BCOM">B.Com</option>
+                        <option value="BSC">B.Sc</option>
+                        <option value="BTECH">B.Tech</option>
+                    </optgroup>
+                    <optgroup label="Masters">
+                        <option value="MTECH">M.Tech</option>
+                        <option value="MBA">MBA</option>
+                        <option value="MSC">M.Sc</option>
+                    </optgroup>
+                </select>
+                <br />
+                <label>Address</label>
+                <textarea name="address" rows="5" cols="20"></textarea>
+                <br />
+                <label>Select DOB</label>
+                <input type = "date" name = "dob">
+                <br/>
+                <label>Resume</label>
+                <input type = "file" name = "resume"> 
+                <br/>
+                <input type = "submit" value = "Register" />
+            </form>
+        </div>
+        <h1>HTML table with row and col span</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="4">Product Information</th>
+                </tr>
+                <tr>
+                    <th>Name</th><th>Brand</th><th>Price</th><th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">Mobile</td><td>Samsung</td><td>15000</td><td>4.5</td>
+                </tr>
+                <tr>
+                    <td>Vivo</td><td>18000</td><td>4.6</td>
+                </tr>
+                <tr>
+                    <td>Redmi</td><td>12000</td><td>4.3</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">Laptop</td><td>Lenovo</td><td>52000</td><td>4.3</td>
+                </tr>
+                <tr>
+                    <td>HP</td><td>42000</td><td>4.3</td>
+                </tr>
+            </tbody>
+        <h1>HTML table</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Group A</th><th>Group B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A1234</td><td>B1234</td>
+                </tr>
+                <tr>
+                    <td>C1234</td><td>D1234</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>HTML Entities</h1>
+        <h3>less than symbol &lt; greater than symbol &gt; </h3>
+        <h3>&pound; 10,000</h3>
+        <h3>&#8377; 10,000</h3>
+        <h3>Extra space &nbsp; &nbsp; &nbsp; are added</h3>
+        <h2>Sub & Sup tag</h2>
+        <h3>H<sub>2</sub>SO<sub>4</sub></h3>
+        <h3>(a + b)<sup>2</sup></h3>
+    </div>
+    <div>
+        <h1>HTML Lists</h1>
+        <ol>
+            <li>Apple</li> <li>Mango</li> <li>Grapes</li> <li>Orange</li>
+        </ol>
+        <ul>
+            <li>Apple</li> <li>Mango</li> <li>Grapes</li> <li>Orange</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Learning of anchor</h2>
+        <a href="http://www.google.com" target="_blank">Google</a>
+    </div>
+     <div>
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ipsam eum dignissimos voluptatum blanditiis hic cumque.</p>
+    </div>
+    <div>
+        <h5>Moving banner</h5>
+        <marquee>A car image</marquee>
+        <marquee direction="right">A car image</marquee>
+    </div>
+    <div>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, voluptate.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam atque voluptatibus laborum.</p>
+        <img 
+            src="https://www.bing.com/th/id/OIP.f6ved8wranJjaO8g0qDStgHaEK?w=245&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" 
+            alt = "An image of a car" width = "300" height = "300">
+    </div>
+    <h1>First heading</h1>
+    <h2>Second heading</h2>
+    <h3>Third heading</h3>
+    <h4>Fourth heading</h4>
+    <h5>Fifth heading</h5>
+    <h6>Sixth heading</h6>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, architecto!</p>
+   
+    
+</body>
+</html>
