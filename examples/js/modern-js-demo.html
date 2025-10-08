@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let items = [2, 3, 4, 5, 6];
+        // forEach takes an anonymous function, it does iteration automatically
+        // function(element, index)
+        let items0 = items.forEach(function(a, b){
+            //document.write(`<p>element=${a}, index=${b}</p>`);
+            return a * 20;
+        }); 
+        console.log("Items0 = "+items0);
+        // map(callbackFn:return)
+        let items2 = items.map(function(a, b){
+            return a * 10;
+        });
+        console.log("Items2 = "+items2);
+        // arrow function (a, b) => statement
+        items.forEach((a, b)=>document.write(`Item=${a}, Position=${b}</p>`));
+        // arrow function for map
+        let items3 = items.map((a, b)=>a * 100);
+        console.log("Items3 = "+items3);
+    </script>
+</body>
+</html>

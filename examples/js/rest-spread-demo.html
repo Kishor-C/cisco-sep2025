@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // rest parameter - maximum you can have one rest paraemter
+        function sum(a, ...b) {
+            console.log(a, b);
+        }
+        function test(a, b, ...c) {
+            console.log(a, b, c);
+        }
+        sum(20, 30);
+        sum(120, 30, 40);
+        sum(30, 60, 40, 50);
+        let items = [8, 9, 10, 15, 80];
+        // spread operators
+        test(...items);
+    </script>
+</body>
+</html>

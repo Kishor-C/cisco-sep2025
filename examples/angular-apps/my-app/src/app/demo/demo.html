@@ -1,0 +1,31 @@
+<div>
+    <h2 class="alert alert-primary text-center">Demo component</h2>
+    <h3 *ngIf="isHidden">Toggle content</h3>
+    <h3>Value of isHidden: {{isHidden}}</h3>
+    <button (click) = "handleClick()" 
+        class="btn btn-primary btn-lg">Button</button>
+    <div>
+        <input type = "text" placeholder="Enter fruit name" #item>
+        <button class="btn btn-primary" 
+        (click) = "addItem(item.value)">Add</button>
+    </div>
+    <div>
+      <ul>
+        <li *ngFor = "let f of fruits">{{f}}</li>
+      </ul>
+    </div>
+    <div>
+       <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th><th>Name</th><th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let u of users">
+                <td>{{u.id}}</td><td>{{u.name}}</td><td>{{u.salary}}</td>
+            </tr>
+        </tbody>
+       </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('hello')
+        // promise - asynchronous
+        fetch('https://jsonplaceholder.typicode.com/users/2')
+        .then(response => response.json())
+        .then(json => console.log(json))
+
+        console.log('welcome');
+        // asyn and await - you want some task to do sequentially by waiting for the response
+        // an async can return a promise that you can handle in a separate method if you want
+        async function demo() {
+            console.log('hello2')
+            // partial response
+            let res = await fetch('https://jsonplaceholder.typicode.com/users/3');
+            // this line is executed only when the previous line is completed
+            let json = await res.json(); // wait for json data to be fetched from the body
+            console.log(json);
+            console.log('welcome2');
+        }
+        demo();
+    </script>
+</body>
+</html>
