@@ -1,0 +1,18 @@
+<div>
+    <h1>Angular Pipes Example</h1><hr />
+    <div *ngFor = "let emp of employees">
+       Name: {{emp.firstname}}, Salary: {{emp.salary | currency}}, 
+       Gender: {{emp.gender}}, Dob: {{emp.dob | date}}
+    </div>
+    <h2>Formatting name, currency and date</h2>
+    <div *ngFor = "let emp of employees">
+       Name: {{emp.firstname | uppercase}}, Salary: {{emp.salary | currency: 'INR'}}, 
+       Gender: {{emp.gender}}, Dob: {{emp.dob | date: 'dd-MM-yyyy'}}
+    </div>
+    <h2>Show all in JSON format</h2>
+    <div>{{employees | json }}</div>
+    <h2>Formatting the name as per gender</h2>
+    <div *ngFor = "let emp of employees">
+        {{emp.firstname | nameFormatter : emp.gender}}
+    </div>
+</div>

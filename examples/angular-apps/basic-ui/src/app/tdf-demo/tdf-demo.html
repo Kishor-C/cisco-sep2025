@@ -1,0 +1,18 @@
+<div>
+    <h1>TDF Demo</h1>
+    <form (ngSubmit) = "handleSubmit()">
+        <input type = "text" [(ngModel)] = "firstname" 
+        name = "firstname"autocomplete="off" 
+        placeholder="Enter firstname" 
+            class="w-25 form-control form-control-lg"><br />
+    <input type = "text" [(ngModel)] = "lastname" 
+        name = "lastname"autocomplete="off" 
+        placeholder="Enter lastname"
+            class="w-25 form-control form-control-lg"><br />
+    <label><b>Select DOB</b></label>
+    <input type = "date" [(ngModel)] = "dob" name = "dob"
+        class="w-25 form-control form-control-lg"><br />
+    <input type = "submit" value = "Register"
+        class="btn btn-lg btn-primary w-25">
+    </form>
+</div>
