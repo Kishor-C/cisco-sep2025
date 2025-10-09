@@ -1,0 +1,21 @@
+<div>
+    <h1>MDF Demo</h1>
+    <form [formGroup] = "userForm" (ngSubmit) = "handleSubmit()">
+        <input type = "text" formControlName = "firstname" 
+        placeholder="Enter firstname"> <br />
+        <div [hidden] = "userForm.controls['firstname'].valid || userForm.controls['firstname'].pristine" 
+        class="alert alert-danger w-25">
+            Firstname is required
+        </div>
+        <input type = "text" formControlName = "lastname" 
+        placeholder="Enter lastname"> <br />
+        <label>Select DOB</label>
+        <input type = "date" formControlName = "dob"> <br />
+        <input type = "submit" [disabled] = "userForm.invalid" value = "Register">
+    </form>
+
+    <div>
+        Firstname valid: {{userForm.controls['firstname'].valid}} <br />
+        Prisitne: {{userForm.controls['firstname'].pristine}}
+    </div>
+</div>
