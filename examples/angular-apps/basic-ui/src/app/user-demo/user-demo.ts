@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { User } from '../user';
 @Component({
   selector: 'app-user-demo',
   standalone: false,
@@ -8,6 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class UserDemo {
   private _builder = inject(FormBuilder);
+  private _service = inject(User); // import from '../user';
   // the group function takesn an object of form-controls
   // each form-control can have default values & validators in the form of an array
   userForm = this._builder.group({
@@ -22,6 +24,7 @@ export class UserDemo {
       alert("Some fields are mandatory");
       this.isFormValid = false;
     } else {
+      this._service.store(this.userForm.value);
       console.log(this.userForm.value);
       this.isFormValid = true;
     }

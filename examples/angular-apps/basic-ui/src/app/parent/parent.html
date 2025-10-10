@@ -1,0 +1,8 @@
+<div>
+    <h2>Parent component and size is {{size}}</h2>
+    <h3>Using NgFor</h3>
+    <div *ngFor="let i of items">
+        <app-child [user]="i" 
+            (counter)="modifySize($event)"></app-child>
+    </div>
+</div>

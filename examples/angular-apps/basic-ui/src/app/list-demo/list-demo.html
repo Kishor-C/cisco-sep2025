@@ -1,0 +1,11 @@
+<div>
+    <h1>List users</h1>
+    <div *ngIf = "usersList">
+       <div *ngFor = "let u of usersList">
+        Name: {{u.username}}, 
+        Phone: {{u.phone}}, 
+        Email: {{u.email}}, 
+        Dob: {{u.dob}}
+       </div>
+    </div>
+</div>

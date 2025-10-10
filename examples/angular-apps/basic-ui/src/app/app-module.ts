@@ -10,6 +10,9 @@ import { NameFormatterPipe } from './name-formatter-pipe';
 import { TdfDemo } from './tdf-demo/tdf-demo';
 import { MdfDemo } from './mdf-demo/mdf-demo';
 import { UserDemo } from './user-demo/user-demo';
+import { Parent } from './parent/parent';
+import { Child } from './child/child';
+import { ListDemo } from './list-demo/list-demo';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { UserDemo } from './user-demo/user-demo';
     NameFormatterPipe,
     TdfDemo,
     MdfDemo,
-    UserDemo
+    UserDemo,
+    Parent,
+    Child,
+    ListDemo
   ],
   imports: [
     BrowserModule,
