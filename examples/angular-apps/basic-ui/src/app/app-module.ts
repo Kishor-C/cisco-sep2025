@@ -13,6 +13,8 @@ import { UserDemo } from './user-demo/user-demo';
 import { Parent } from './parent/parent';
 import { Child } from './child/child';
 import { ListDemo } from './list-demo/list-demo';
+import { Parent1 } from './parent1/parent1';
+import { Child1 } from './child1/child1';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ListDemo } from './list-demo/list-demo';
     UserDemo,
     Parent,
     Child,
-    ListDemo
+    ListDemo,
+    Parent1,
+    Child1
   ],
   imports: [
     BrowserModule,

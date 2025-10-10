@@ -1,0 +1,12 @@
+<div>
+    <!-- <div *ngFor = "let u of userArray">
+        <app-child1 [user] = "u"></app-child1>
+    </div> -->
+    <div>
+        Like: {{plike}}
+        Dislike: {{pdislike}}
+    </div>
+   <app-child1
+   (like) = "updateLikes($event)" 
+   (disLike) = "updateDisLikes2($event)"></app-child1>
+</div>
