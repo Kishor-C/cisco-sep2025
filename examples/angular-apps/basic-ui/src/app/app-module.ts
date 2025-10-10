@@ -9,6 +9,7 @@ import { PipeDemo } from './pipe-demo/pipe-demo';
 import { NameFormatterPipe } from './name-formatter-pipe';
 import { TdfDemo } from './tdf-demo/tdf-demo';
 import { MdfDemo } from './mdf-demo/mdf-demo';
+import { UserDemo } from './user-demo/user-demo';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MdfDemo } from './mdf-demo/mdf-demo';
     PipeDemo,
     NameFormatterPipe,
     TdfDemo,
-    MdfDemo
+    MdfDemo,
+    UserDemo
   ],
   imports: [
     BrowserModule,
