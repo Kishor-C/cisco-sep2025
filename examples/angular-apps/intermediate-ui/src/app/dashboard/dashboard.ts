@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
-export class Dashboard {
-
+export class Dashboard implements OnInit{
+  _activatedRoute = inject(ActivatedRoute);
+  id : number | undefined = undefined;
+  ngOnInit(): void {
+      this._activatedRoute.paramMap.subscribe({
+        next : value => this.id = Number(value.get('id')),
+        error : err => console.log('error: ', err)
+      })
+  }
 }
