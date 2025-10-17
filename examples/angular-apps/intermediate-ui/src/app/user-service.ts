@@ -13,6 +13,10 @@ export class UserService {
     let url = 'https://jsonplaceholder.typicode.com/users';
     return this.http.get(url);
   }
+  getUserById(id : number) : Observable<any> {
+    let url = 'https://jsonplaceholder.typicode.com/users/'+id;
+    return this.http.get(url);
+  }
 
   users : User[] = [];
   store(user : User | any) : void {

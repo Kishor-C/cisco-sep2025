@@ -1,0 +1,14 @@
+<div class="w-50">
+    <h3>User Item</h3>
+    <form [formGroup] = "idForm" (ngSubmit) = "search()">
+        <label>Enter id</label>
+        <input type = "number" formControlName="id" class="form-control form-control-lg"> <br />
+        <input type = "submit" value = "Search" class="btn btn-primary btn-lg w-25">
+    </form>
+    <div *ngIf = "user" class="alert alert-success">
+        {{user | json}}
+    </div>
+    <div *ngIf = "error" class="alert alert-danger">
+        {{error}}
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { Dashboard } from './dashboard/dashboard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { Users } from './users/users';
+import { UserItem } from './user-item/user-item';
 @NgModule({
   declarations: [
     App,
@@ -23,7 +24,8 @@ import { Users } from './users/users';
     Search,
     Settings,
     Dashboard,
-    Users
+    Users,
+    UserItem
   ],
   imports: [
     BrowserModule,
