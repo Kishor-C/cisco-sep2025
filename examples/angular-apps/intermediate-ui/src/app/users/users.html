@@ -1,0 +1,23 @@
+<div>
+    <h2>Users list from json placeholder</h2>
+    <hr />
+    
+    <div *ngIf = "userArray">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th><th>Name</th>
+                    <th>Email</th><th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of userArray">
+                    <td>{{u.id}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.email}}</td>
+                    <td>{{u.address.city}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

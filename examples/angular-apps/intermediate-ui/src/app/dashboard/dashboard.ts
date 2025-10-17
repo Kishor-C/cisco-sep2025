@@ -11,9 +11,8 @@ export class Dashboard implements OnInit{
   _activatedRoute = inject(ActivatedRoute);
   id : number | undefined = undefined;
   ngOnInit(): void {
-      this._activatedRoute.paramMap.subscribe({
-        next : value => this.id = Number(value.get('id')),
-        error : err => console.log('error: ', err)
-      })
+      this._activatedRoute.parent?.paramMap.subscribe({
+        next : value => this.id = Number(value.get('id'))
+      });
   }
 }

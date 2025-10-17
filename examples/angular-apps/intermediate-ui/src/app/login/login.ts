@@ -25,8 +25,8 @@ export class Login {
       this.errorMessage = 'Invalid credentials';
       this.loginForm.reset({});
     } else {
+      sessionStorage.setItem('user', String(login.id));
       this._router.navigate(['success', login.id]) // success/:id
     }
   }
-
 }
