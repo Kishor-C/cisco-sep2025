@@ -21,4 +21,9 @@ public class Person {
 	public void setPhone(long phone) {
 		this.phone = phone;
 	}
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", phone=" + phone + "]";
+	}
+	
 }
