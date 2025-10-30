@@ -1,6 +1,7 @@
 package com.cisco.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -14,6 +15,31 @@ import com.cisco.beans.Profile;
  */
 public class ProfileDao {
 	// save(Profile p), findAll(), findById(int id), deleteById(int id)
+	
+	// save the profile and return the saved profile
+	public Profile save(Profile profile) {
+		try {
+			Connection connection = JdbcUtil.getConnection();
+			// Statement has a constant that can return the generated primary key
+			PreparedStatement statement = 
+		connection.prepareStatement("insert into profile(name, dob) values (?,?)", Statement.RETURN_GENERATED_KEYS);
+			statement.setString(1, profile.getName());
+			statement.setDate(2, Date.valueOf(profile.getDob()));
+			int count = statement.executeUpdate();
+			Profile createdProfile = null;
+			if(count > 0) {
+				ResultSet result =  statement.getGeneratedKeys();
+				if(result.next()) {
+					int id = result.getInt(1);
+					createdProfile = findById(id);
+				}
+			}
+			return createdProfile;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	// get a profile based on id
 	public Profile findById(int id) {
