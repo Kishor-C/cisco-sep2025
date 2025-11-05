@@ -9,6 +9,8 @@
 </head>
 <body>
 	<a href = "login.jsp">Login</a>
+	<br />
+	<a href = "first.jsp">First Page</a>
 	<h1>This is JSP file</h1>
 	<%!
 		int counter1 = 0;
