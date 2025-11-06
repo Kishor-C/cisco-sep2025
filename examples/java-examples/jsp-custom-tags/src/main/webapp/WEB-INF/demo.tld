@@ -1,0 +1,18 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<tag>
+		<name>demo</name>
+		<tag-class>com.cisco.DemoTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	<tag>
+		<name>currentDate</name>
+		<tag-class>com.cisco.DateHandler</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>pattern</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>
