@@ -1,6 +1,9 @@
 package com.cisco.controller;
 
+import java.util.List;
 import java.util.Scanner;
+
+import org.bson.types.ObjectId;
 
 import com.cisco.beans.Profile;
 import com.cisco.dao.ProfileDAOImpl;
@@ -26,12 +29,30 @@ public class Main {
 				System.out.println(saved);
 				break;
 			case 2: 
+				System.out.println("Enter id");
+				ObjectId pid = new ObjectId(scan.next());
+				Profile profile2 = dao.findById(pid);
+				System.out.println(profile2);
 				break;
 			case 3: 
+				List<Profile> list = dao.findAll();
+				for(Profile p : list) {
+					System.out.println(p);
+				}
 				break;
 			case 4: 
+				System.out.println("Enter id");
+				ObjectId id = new ObjectId(scan.next());
+				System.out.println("Enter phone");
+				long phone = scan.nextLong();
+				Profile updatedProfile = dao.updatePhonById(id, phone);
+				System.out.println(updatedProfile);
 				break;
 			case 5: 
+				System.out.println("Enter id");
+				ObjectId id2 = new ObjectId(scan.next());
+				int status = dao.delete(id2);
+				System.out.println("Deleted "+status);
 				break;
 				
 			}

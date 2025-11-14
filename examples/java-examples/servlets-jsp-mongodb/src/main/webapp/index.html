@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+	<div class = "container-fluid">
+		<h1>Profile App</h1>
+		<h3>Profile Registration</h3>
+		<div class = "w-50">
+			<form action = "ProfileRegistrationServlet" method = "post">
+				<label>Enter name</label> <input type = "text"  name = "name" class = "form-control form-control-lg"/> <br />
+				<label>Select gender</label> 
+				<input type = "radio" name = "gender" value = "Male"/> Male
+				<input type = "radio" name = "gender" value = "Female" /> Female <br />
+				<label>Enter phone</label> <input type = "number" name = "phone"  class = "form-control form-control-lg"/> <br />
+				<input type = "submit" value = "Register"  class = "btn btn-success btn-lg">
+			</form>
+		</div>
+		<!--  Complete delete and update profile and show the message in JSP -->
+		<h3>Delete Profile</h3>
+		<div class = "w-50">
+			<form action = "ProfileDeleteServlet" method = "post">
+				<label>Enter id</label> <input type = "number" name = "id"  class = "form-control form-control-lg" /> <br />
+				<input type = "submit" value = "Delete"  class = "btn btn-danger btn-lg">
+			</form>
+		</div>
+		<h3>Update Profile</h3>
+		<div class = "w-50">
+		<form action = "ProfileUpdateServlet" method = "post">
+			<label>Enter id</label> <input type = "number" name = "id"  class = "form-control form-control-lg"/> <br />
+			<label>Enter phone</label> <input type = "number" name = "phone"  class = "form-control form-control-lg"/> <br />
+			<input type = "submit" value = "Update" class = "btn btn-primary btn-lg">
+		</form>
+		</div>
+		<h3>List Profiles</h3>
+		<a href = "ProfileListServlet">List Profiles</a>
+	</div>
+</body>
+</html>
