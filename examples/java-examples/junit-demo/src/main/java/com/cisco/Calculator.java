@@ -10,9 +10,9 @@ public class Calculator {
 	public int add(int x, int y) {
 		return (x + y);
 	}
-	public int div(int x, int y ) {
+	public int div(int x, int y) {
 		if(y == 0) {
-			throw new ArithmeticException("divide by 0 error");
+			throw new ArithmeticException("divide by 0 is impossible");
 		}
 		return (x / y);
 	}

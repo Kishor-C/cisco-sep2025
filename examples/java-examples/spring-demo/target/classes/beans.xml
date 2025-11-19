@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id = "b1" class = "com.cisco.HelloWorld"></bean>
+
+	<bean id = "b2" class = "com.cisco.Datasource"> <!-- username, password, url gets null by default -->
+		<property name="username" value = "root"></property> <!--  setUsername(root) -->
+		<property name="password" value="Welcome123"></property> <!-- setPassword(Welcome123) -->
+		<property name="url" value="jdbc:mysql:ip:port"></property> <!-- setUrl(jdbc:mysql:ip:port) -->
+	</bean>
+	
+	<bean id = "b3" class = "com.cisco.DBUtil">
+		<!--  setDatasource(b2) -->
+		<property name = "datasource" ref = "b2"></property> 
+	</bean>
+</beans>

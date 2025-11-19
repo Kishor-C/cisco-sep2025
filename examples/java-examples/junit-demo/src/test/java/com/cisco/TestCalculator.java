@@ -1,6 +1,8 @@
 package com.cisco;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +25,21 @@ public class TestCalculator {
 		int y = 20;
 		int expected = x + y;
 		int actual = calci.add(x, y);
-		// assertEquals(expected, actual) -> test is passed if both are equal else test is failed
 		assertEquals(expected, actual);
 	}
+	@Test // testing arrays
+	public void testTenX() {
+		int[] items = {1, 2, 3, 4, 5};
+		int[] actual = calci.mapToTenX(items);
+		int[] expected = {10, 20, 30, 40, 50};
+		assertArrayEquals(expected, actual);
+	}
+	@Test // test for exceptions
+	public void testException() {
+		ArithmeticException thrown = assertThrows(ArithmeticException.class, () -> {
+			calci.div(20, 0);
+		});
+		assertEquals(thrown.getMessage(), "divide by 0 is impossible");
+	}
+	
 }
