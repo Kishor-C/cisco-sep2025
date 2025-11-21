@@ -1,14 +1,14 @@
 package com.cisco.controller;
 
-import org.springframework.context.ApplicationContext;
+
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cisco.service.EmployeeServiceImpl;
-import com.cisco.service.StudentServiceImpl;
 
 public class TestViewController {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		BeanFactory context = new ClassPathXmlApplicationContext("beans.xml");
 		
 //		StudentServiceImpl service = (StudentServiceImpl)context.getBean("service");
 //		service.testCRUD();

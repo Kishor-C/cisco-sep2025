@@ -6,6 +6,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+	<bean id = "payment" class = "com.cisco.service.PaymentGateway">
+		<property name = "channels">
+			<list>
+				<value>Razorpay</value>
+				<value>Paypal</value>
+				<value>Stripe</value>
+				<value>Cashfree</value>
+				<value>Cashfree</value>
+			</list>
+		</property>
+	</bean>
+	
 	<bean id = "mysqlDAO" class = "com.cisco.dao.StudentRepositoryMySQLImpl">
 		<property name="databaseVersion" value = "8.0"></property>
 	</bean>
