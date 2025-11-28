@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Simple JAX-RS JS Client</h1>
+        <button onclick = "send()">Send Request</button>
+    </div>
+    <div id = "d1">
+
+    </div>
+    <script>
+        async function send() {
+            let ele = document.querySelector("#d1");
+            let URL = "http://localhost:9090/jax-rs-demo/webapi/v1/test";
+            let responsePromise = await fetch(URL);
+            let text = await responsePromise.text();
+            if(responsePromise.status == 200) {
+                ele.style.color = 'green';
+            }  else {
+                ele.style.color = 'red';
+            }
+            ele.textContent = text;
+        }
+    </script>
+</body>
+</html>
