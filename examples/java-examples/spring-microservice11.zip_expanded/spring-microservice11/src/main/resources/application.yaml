@@ -1,0 +1,8 @@
+# spring.application.name is the instance-id
+spring:
+  application:
+    name: first-ms
+
+# microservice runs in 9091 port
+server:
+  port: 9091
