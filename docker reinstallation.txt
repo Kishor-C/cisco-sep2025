@@ -1,0 +1,50 @@
+sudo apt-get remove -y docker docker.io docker-engine docker-ce containerd runc
+
+sudo apt-get purge -y docker.io containerd
+
+sudo apt-get purge -y docker docker-engine docker.io containerd runc docker-ce docker-ce-cli
+
+dpkg -l | grep -i docker
+
+sudo apt-get purge -y docker-compose docker-scan-plugin python3-docker python3-dockerpty
+
+sudo apt-get purge -y containerd.io
+
+sudo apt-get autoremove -y
+
+dpkg -l | grep -E 'docker|containerd|runc'
+
+sudo apt-get update
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+
+sudo apt-get purge -y docker docker-engine docker.io docker-ce docker-ce-cli containerd runc
+
+sudo apt-get autoremove -y
+
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+
+sudo install -m 0755 -d /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+
+Press y to overwrite
+
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu focal stable" | \
+ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+sudo apt-get update
+
+apt-cache policy docker-ce
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker

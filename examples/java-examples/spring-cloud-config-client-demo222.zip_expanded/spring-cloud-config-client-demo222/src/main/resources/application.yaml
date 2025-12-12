@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: hello
+  config:
+    import: optional:configserver:http://localhost:8888
+  profiles:
+    active: qa
+
+#spring.profiles.active=dev 
+# this reads hello-dev.properties
