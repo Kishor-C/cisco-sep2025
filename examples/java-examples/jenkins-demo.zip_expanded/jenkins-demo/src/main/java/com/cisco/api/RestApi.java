@@ -13,6 +13,6 @@ public class RestApi {
 	private String name;
 	@GetMapping
 	public String greet() {
-		return "Hello REST";
+		return "Hello "+name;
 	}
 }
