@@ -2,4 +2,5 @@ spring:
   application:
     name: jenkins-demo
 
-user.name: Guest
+user:
+  name: Guest
