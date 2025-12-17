@@ -1,28 +1,25 @@
-# ======================
-# BUILD STAGE
-# ======================
-FROM maven:3.9.9-eclipse-temurin-21 AS build
+# ============================
+# Base image with JDK 21
+# ============================
+FROM eclipse-temurin:21-jdk
 
+# Install Maven
+RUN apt-get update && \
+    apt-get install -y maven && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set working directory
 WORKDIR /app
 
-# Copy pom first for dependency caching
+# Copy project files
 COPY pom.xml .
-RUN mvn dependency:go-offline
-
-# Copy source code
 COPY src ./src
 
-# Build jar
+# Build Spring Boot application
 RUN mvn clean package -DskipTests
 
+# Expose port
+EXPOSE 8080
 
-# ======================
-# RUNTIME STAGE
-# ======================
-FROM eclipse-temurin:21-jre
-
-WORKDIR /app
-
-COPY --from=build /app/target/*.jar app.jar
-
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+# Run the Spring Boot app
+ENTRYPOINT ["java", "-jar", "target/myapp.jar"]

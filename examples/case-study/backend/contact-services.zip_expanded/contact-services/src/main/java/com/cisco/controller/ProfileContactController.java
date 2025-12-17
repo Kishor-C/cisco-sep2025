@@ -35,7 +35,10 @@ public class ProfileContactController {
 	 * getting all the contacts
 	 * 
 	 */
-	
+	@GetMapping
+	public String greet() {
+		return "HELLO Spring REST";
+	}
 	@GetMapping(path = "/profile/{userId}/contacts", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getContactsService(@PathVariable("userId") int id) {
 		ResponseEntity<Object> responseEntity = null;
