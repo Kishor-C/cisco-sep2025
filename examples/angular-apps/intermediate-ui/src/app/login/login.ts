@@ -11,7 +11,7 @@ import { UserService } from '../user-service';
 })
 export class Login {
   _router = inject(Router); // to programmatically navigate
-  _formBuilder = inject(FormBuilder);//to create model drin form
+  _formBuilder = inject(FormBuilder);//to create model driven form
   _service = inject(UserService);
   errorMessage : string | undefined = undefined;//message when authentication fails
   loginForm = this._formBuilder.group({id: [], password: []})//form controls
