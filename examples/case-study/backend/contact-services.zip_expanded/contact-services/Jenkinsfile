@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    environment {
+        PROJECT_PATH = "examples/case-study/backend/contact-services.zip_expanded/contact-services"
+        IMAGE_NAME = "contact-services:latest"
+        CONTAINER_NAME = "contact-services"
+        PORT = "9090"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Pull entire repo
+                git url: 'https://github.com/Kishor-C/cisco-sep2025.git', branch: 'master'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dir("${PROJECT_PATH}") {
+                    // Build Docker image from the Dockerfile in project folder
+                    sh "docker build -t ${IMAGE_NAME} ."
+                }
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    // Remove old container if it exists
+                    sh """
+                    if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
+                        docker rm -f ${CONTAINER_NAME}
+                    fi
+
+                    # Run container with port mapping
+                    docker run -d --name ${CONTAINER_NAME} -p ${PORT}:8080 ${IMAGE_NAME}
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Spring Boot app running at: http://ec2-3-208-27-192.compute-1.amazonaws.com:${PORT}"
+        }
+        failure {
+            echo "❌ Pipeline failed!"
+        }
+    }
+}

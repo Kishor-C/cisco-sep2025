@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProfileService {
   
-  backend_url = 'http://localhost:9090/api';
+  backend_url = 'http://ec2-3-208-27-192.compute-1.amazonaws.com:8080/api';
   http = inject(HttpClient);
 
   public save(profile : any) : Observable<any> {
@@ -17,6 +17,4 @@ export class ProfileService {
   public get(id : number) : Observable<any> {
     return this.http.get(this.backend_url+"/profile/"+id);
   }
-  
-
 }
